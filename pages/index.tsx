@@ -1,7 +1,13 @@
 import React from 'react'
-import Logo from '@components/atoms/Logo'
+import Home from '@components/Home'
+import Forecast from '@components/Forecast'
 
-const Home: React.FC = () => {
-  return <Logo />
+const Homepage: React.FC = () => {
+  return (
+    <>
+      <Home />
+      <Forecast />
+    </>
+  )
 }
-export default Home
+export default Homepage

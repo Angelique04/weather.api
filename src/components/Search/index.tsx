@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import { StyledPaper, StyledTextField } from './style'
 import Grid from '@material-ui/core/Grid'
 import { Container } from '@material-ui/core'
+import { getSuggestedPlaces } from '@api/weatherService'
 
 const SearchCity: React.FC = () => {
+  const getPlaces = async () => {
+    const response = await getSuggestedPlaces('Singapore')
+    console.log('response: %o ', response)
+  }
+
+  // mount
+  useEffect(() => {
+    getPlaces()
+  }, [])
+
   return (
     <Container maxWidth="md">
       <Grid container>

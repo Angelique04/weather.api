@@ -1,35 +1,43 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
 
 const Forecast: React.FC = () => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="sm">
       <Grid container spacing={2}>
-        <Grid item xs>
+        <Grid item xs={12} sm={4}>
           <Card>
-            <Typography variant="body1" color=" textPrimary" display="block" align="center">
-              Today
-            </Typography>
-            <br />
+            <CardContent>
+              <Typography variant="h6" color="textPrimary">
+                Today
+              </Typography>
+              <Divider />
+            </CardContent>
           </Card>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={4} spacing={1}>
           <Card>
-            <Typography variant="body1" color=" textPrimary" display="block" align="center">
-              Tomorrow
-            </Typography>
-            <br />
+            <CardContent>
+              <Typography variant="h6" color="textPrimary">
+                Tomorrow
+              </Typography>
+              <Divider />
+            </CardContent>
           </Card>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} sm={4} spacing={1}>
           <Card>
-            <Typography variant="body1" color=" textPrimary" display="block" align="center">
-              The Day After Tomorrow
-            </Typography>
-            <br />
+            <CardContent>
+              <Typography variant="h6" color="textPrimary">
+                AfterTomorrow
+              </Typography>
+              <Divider />
+            </CardContent>
           </Card>
         </Grid>
       </Grid>

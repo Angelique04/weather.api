@@ -1,13 +1,13 @@
 import React from 'react'
-import Home from '@components/Home'
+import Search from '@components/Search'
 import Forecast from '@components/Forecast'
 
-const Homepage: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
-      <Home />
+      <Search />
       <Forecast />
     </>
   )
 }
-export default Homepage
+export default Home

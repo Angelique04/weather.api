@@ -1,31 +1,40 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField'
+// import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete'
+import { StyledPaper, StyledTextField } from './style'
+import Grid from '@material-ui/core/Grid'
+import { Container } from '@material-ui/core'
 
-/* eslint-disable no-use-before-define */
-
-const Home: React.FC = () => {
+const SearchCity: React.FC = () => {
   return (
-    <div style={{ maxWidth: 1200, margin: 'auto' }}>
-      <Autocomplete
-        freeSolo
-        id="free-solo-2-demo"
-        disableClearable
-        options={top100Films.map((option) => option.title)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Search City"
-            margin="normal"
-            variant="outlined"
-            InputProps={{ ...params.InputProps, type: 'search' }}
-          />
-        )}
-      />
-    </div>
+    <Container maxWidth="md">
+      <Grid container>
+        <Grid item xs={12}>
+          <StyledPaper elevation={0}>
+            <Autocomplete
+              freeSolo
+              id="free-solo-2-demo"
+              disableClearable
+              options={top100Films.map((option) => option.title)}
+              renderInput={(params) => (
+                <StyledTextField
+                  {...params}
+                  label="Search City"
+                  variant="outlined"
+                  InputProps={{ ...params.InputProps, type: 'search' }}
+                  size="medium"
+                  placeholder="Enter a city "
+                />
+              )}
+            />
+          </StyledPaper>
+        </Grid>
+      </Grid>
+    </Container>
   )
 }
-export default Home
+
+export default SearchCity
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
